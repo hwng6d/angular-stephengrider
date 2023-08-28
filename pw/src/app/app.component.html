@@ -1,0 +1,33 @@
+<h1>
+  Password Generator
+</h1>
+
+<div>
+  <label>Enter length</label>
+  <input (input)="onLengthInput($event)"/>
+</div>
+
+<div>
+  <label>Use letters</label>
+  <input type="checkbox" (change)="onUseLetterChange()"/>
+</div>
+
+<div>
+  <label>Use numbers</label>
+<input type="checkbox" (change)="onUseNumberChange()"/>
+</div>
+
+<div>
+  <label>Use symbols</label>
+  <input type="checkbox" (change)="onUseSymbolChange()"/>
+</div>
+
+<button
+  (click)="onButtonClick()"
+  [disabled]="!(length && (isIncludeLetter || isIncludeSymbol || isIncludeNumber))"
+>Generate</button>
+
+<div *ngIf="password">
+  <label>Your password</label>
+  <input type="text" [value]="password"/>
+</div>

@@ -1,0 +1,90 @@
+<div class="container">
+  <h3>Payment Form</h3>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payee name:</label>
+      <input
+        class="form-control"
+        (input)="onNameInput($event)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>{{ name | titlecase }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Date purchase</label>
+      <input
+        class="form-control"
+        type="date"
+        (input)="onDateInput($event)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Date</b></label>
+      <div>{{ date | date: 'MMMM dd, y' }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Price</label>
+      <input
+        class="form-control"
+        (input)="onPriceInput($event)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Price</b></label>
+      <div>{{ price | currency: 'VND' }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>JSON</label>
+      <input
+        class="form-control"
+        (input)="onJsonInput($event)"
+      />
+    </div>
+    <div class="col">
+      <label><b>JSON</b></label>
+      <div>{{ jsonContent | json }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Height</label>
+      <input
+        class="form-control"
+        (input)="onHeightInput($event)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Height</b></label>
+      <div>{{ height | number: '1.0-2' }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Miles</label>
+      <input
+        class="form-control"
+        (input)="onMilesInput($event)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Kilometers</b></label>
+      <div>{{ miles | convert: 'km' }}</div>
+    </div>
+  </div>
+  
+</div>
+
